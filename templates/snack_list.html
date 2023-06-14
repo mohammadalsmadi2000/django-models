@@ -1,0 +1,33 @@
+{% extends 'base.html'%} 
+<style>
+    .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.snack-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.snack-item {
+  margin-bottom: 10px;
+}
+
+.snack-name {
+  font-size: 18px;
+}
+
+.snack-description {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #666;
+}
+</style>
+{% block content%}
+<h1>snacks List</h1>
+{% for snack in snack_list%}
+<h3><a href="{% url 'snack_detail' snack.pk%}">{{snack.name}}</a></h3>
+{%endfor%} 
+{% endblock content%}
